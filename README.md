@@ -33,7 +33,7 @@ Salmonella Enteritidis
 
 [![se-phylo][]][se-phylo]
 
-Generated using **237** variant sites from 72% (3.4 Mbp/4.7 Mbp) of the reference genome.  See [Salmonella Enteritidis][] supplemental information for details.
+Generated using **237** variant sites from **72% (3.4 Mbp/4.7 Mbp)** of the reference genome.  See [Salmonella Enteritidis][] supplemental information for details.
 
 ### Questions
 
