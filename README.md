@@ -24,6 +24,10 @@ Generated using **232** variant sites from **87% (2.6 Mbp/3.0 Mbp)** of the refe
 
 2. Do the environmental/product isolates from either facility match clinical isolates in the BioProjects listed in question 1, or any other clinical Listeria monocytogenes isolates available from other public data sources?  Can you identify the clinical cases associated with this contamination event?  **Yes, 4 isolates match facility 1 (SAMN02400164 + SRR1027093, SAMN02582713 + SRR1112204, SAMN02689015 + SRR1193825, SAMN02582710 + SRR1112195)**.
 
+   [![lm-additional][]][lm-additional]
+
+   Generated using **361** sites from **84% (2.5 Mbp/3.0 Mbp)** of the reference genome.  See [Listeria monocytogenes other sources][] for more information.
+
 Detailed responses can be found in [results.xlsx][].
 
 Salmonella Enteritidis
@@ -37,7 +41,7 @@ Generated using **237** variant sites from **72% (3.4 Mbp/4.7 Mbp)** of the refe
 
 ### Questions
 
-1. Do the 4 clinical isolates (ASM_26, ASM_31, ASM_49, and ASM_50) that are epidemiologically linked to eggs from state #2 match any of the environmental or food swabs collected at those facilities? **Yes.  Three of the 4 clinical cases (ASM_49 + SRR2352233, ASM_50 + SRR2352234, ASM_26 + SRR2352210) are a match to state 2.  One of the 4 cases (ASM_31 + SRR2352215) is an uncertain match to state 2.**
+1. Do the 4 clinical isolates (ASM_26, ASM_31, ASM_49, and ASM_50) that are epidemiologically linked to eggs from state #2 match any of the environmental or food swabs collected at those facilities? **Yes.  Three of the 4 clinical cases (ASM_49 + SRR2352233, ASM_50 + SRR2352234, ASM_26 + SRR2352210) are a match to isolates from state 2.  One of the 4 cases (ASM_31 + SRR2352215) is an uncertain match to isolates from state 2.**
 
 2. Do any of the remaining 19 clinical isolates match clinical isolates from question #1? **Yes, 14 of the 19 clinical isolates**. Do they match any of the food or environmental isolates? **Yes, 8 clinical isolates match food or environmental**.  Are there additional clinical clusters?  **Possible (ASM_41 + SRR2352225, ASM_42 + SRR2352226), (ASM_44 + SRR2352228, ASM_45 + SRR2352229).  Possible but less likely (ASM_41 + SRR2352225, ASM_44 + SRR2352228), (ASM_41 + SRR2352225, ASM_45 + SRR2352229).**
 
@@ -50,3 +54,5 @@ Detailed responses can be found in [results.xlsx][].
 [Salmonella Enteritidis]: Salmonella_supplemental/results/SE_ASM-31_Cov10_RM_ASM-20_RM_PHAST/
 [lm-phylo]: images/lm-phylo.png
 [se-phylo]: images/se-phylo.png
+[lm-additional]: images/lm-additional.png
+[Listeria monocytogenes other sources]: Listeria_supplemental/results/LM_ASM-68_Cov10_RM_PHAST_NCBI_Datasets/
