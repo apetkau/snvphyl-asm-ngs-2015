@@ -30,10 +30,19 @@ Generated using **232** variant sites from **87% (2.6 Mbp/3.0 Mbp)** of the refe
 
 Detailed responses can be found in [results.xlsx][].
 
+### Methods
+
+1. Genome ASM_68 was assembled using SPAdes.  Contigs filtered to remove short contigs (< 1000 bp), low coverage (< 0.33 * mean coverage).  Repeats identified as contigs with > 1.75 * mean coverage and removed (to avoid mapping to repeat regions when constructing phylogeny).  Reference genome can be found at [ASM-68R.fasta][].
+2. Phages identified on ASM_68 using PHAST (http://phast.wishartlab.com/) and entered into an invalid-positions file.  Invalid positions file can be found at [invalid_positions.bed](Listeria_supplemental/input/invalid_positions.bed).
+3. Reads were run through an instance of [SNVPhyl][] (version 0.2-beta-1) along with the ASM_68 reference and the invalid-positions file.  Parameters set as `min_coverage=10`, `min_mean_mapping=30`, and `alternative_allele_proporition=0.75`.  Reads for ASM_68 were kept in analysis to check for any differences compared to reference genome.
+4. Output files (phylogenetic tree, vcf2core, snpTable) were saved from pipeline.
+5. Some post-processing (re-labeling sample names and re-arranging distance matrix rows/columns to match tree) was done.
+6. Above steps were repeated for different combinations of samples to include within a phylogenetic tree.  In particular, for including public datasets an initial screening was performed with SNVPhyl to find potential matches (excluding isolates with too little or too much data), and then the smaller subset of potential matches was re-ran to generate the final phylogenetic tree.
+
 Salmonella Enteritidis
 ----------------------
 
-## Tree
+### Tree
 
 [![se-phylo][]][se-phylo]
 
@@ -49,6 +58,17 @@ Generated using **237** variant sites from **72% (3.4 Mbp/4.7 Mbp)** of the refe
 
 Detailed responses can be found in [results.xlsx][].
 
+### Methods
+
+1. Genome ASM_31 assembled using SPAdes.  Contigs filtered to remove short contigs (< 1000 bp), low coverage (< 0.33 * mean coverage).  Repeats identified as contigs with > 1.75 * mean coverage and removed (to avoid mapping to repeat regions when constructing phylogeny).  Reference genome can be found at [ASM-31R.fasta][].
+2. Phages identified on ASM_31 using PHAST (http://phast.wishartlab.com/) and entered into an invalid-positions file.  Invalid positions file can be found at [invalid_positions.bed](Salmonella_supplemental/input/invalid-positions.bed).
+3. Reads were run through an instance of [SNVPhyl][] (version 0.2-beta-1) along with the ASM_31 reference and the invalid-positions file.  Parameters set as `min_coverage=10`, `min_mean_mapping=30`, `alternative_allele_proporition=0.75`.  Reads for ASM_31 were kept in analysis to check for any differences compared to reference genome.  Reads for ASM_20 were removed from analysis due to low coverage.
+4. Output files (phylogenetic tree, vcf2core, snpTable) were saved from pipeline.
+5. There were 3 sites identified where reads for ASM_31 differed from the assembled reference for ASM_31.  These sites were removed from analysis by labeling as `filtered-reference` in the [snpTable.tsv](Salmonella_supplemental/results/SE_ASM-31_Cov10_RM_ASM-20_RM_PHAST/snpTable.tsv) file and re-generating a SNV alignment from the remaining sites.
+6. The re-generated SNV alignment was used to construct a SNV distance matrix and phylogenetic tree (using phyml).
+7. Some post-processing (re-labeling sample names and re-arranging distance matrix rows/columns to match tree) was done.
+8. Above steps were repeated for different combinations of samples to include within a phylogenetic tree.
+
 [results.xlsx]: results.xlsx
 [Listeria monocytogenes]: Listeria_supplemental/results/LM_ASM-68_Cov10_RM_PHAST/
 [Salmonella Enteritidis]: Salmonella_supplemental/results/SE_ASM-31_Cov10_RM_ASM-20_RM_PHAST/
@@ -56,3 +76,6 @@ Detailed responses can be found in [results.xlsx][].
 [se-phylo]: images/se-phylo.png
 [lm-additional]: images/lm-additional.png
 [Listeria monocytogenes other sources]: Listeria_supplemental/results/LM_ASM-68_Cov10_RM_PHAST_NCBI_Datasets/
+[ASM-68R.fasta]: Listeria_supplemental/input/ASM-68R.fasta
+[ASM-31R.fasta]: Salmonella_supplemental/input/ASM-31R.fasta
+[SNVPhyl]: http://snvphyl.readthedocs.org/en/latest/
